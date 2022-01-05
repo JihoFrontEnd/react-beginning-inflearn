@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello React 3</title>
+
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/javascript">
+        const attributes = {
+            child: { style: { color: "blue" }},
+            parent: { style: { border: "1px solid red" }}
+        };
+        const child = React.createElement('h1', attributes.child, 'Hello React');
+        const parent = React.createElement('div', attributes.parent, child, child, child);
+        ReactDOM.render(parent, document.getElementById("root"));
+    </script>
+</body>
+</html>
